@@ -1,7 +1,6 @@
-package com.test.appgate;
+package com.test.appgate.data;
 
 import com.google.gson.Gson;
-import com.test.appgate.data.OperationCallback;
 import com.test.appgate.data.dto.Response;
 import com.test.appgate.data.remote.RemoteSource;
 

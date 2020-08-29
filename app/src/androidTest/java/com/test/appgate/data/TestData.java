@@ -1,4 +1,4 @@
-package com.test.appgate;
+package com.test.appgate.data;
 
 public final class TestData {
 

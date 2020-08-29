@@ -1,4 +1,4 @@
-package com.test.appgate;
+package com.test.appgate.test;
 
 import android.content.Context;
 
@@ -7,6 +7,8 @@ import androidx.room.Room;
 import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
+import com.test.appgate.data.LiveDataTestUtil;
+import com.test.appgate.data.MockDataApiClient;
 import com.test.appgate.data.OperationCallback;
 import com.test.appgate.data.database.TestDao;
 import com.test.appgate.data.database.TestDatabase;

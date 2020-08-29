@@ -1,4 +1,4 @@
-package com.test.appgate;
+package com.test.appgate.data;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;

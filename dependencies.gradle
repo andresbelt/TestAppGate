@@ -34,7 +34,6 @@ ext {
     androidXAppCompat           = "androidx.appcompat:appcompat:$androidXVersion"
     androidXPreference          = "androidx.preference:preference-ktx:$androidXPreferenceVersion"
     androidXRecyclerView        = "androidx.recyclerview:recyclerview:$androidXRecyclerviewVersion"
-    androidXSwipeRefresh        = "androidx.swiperefreshlayout:swiperefreshlayout:$androidXSwipeRefreshVersion"
     materialDesign              = "com.google.android.material:material:$materialVersion"
     constraintLayout            = "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
     multidex                    = "androidx.multidex:multidex:$multidexVersion"
@@ -43,23 +42,6 @@ ext {
     roomVersion                 = '2.2.5'
     room                        = "androidx.room:room-runtime:$roomVersion"
     roomCompiler                = "androidx.room:room-compiler:$roomVersion"
-
-
-    // WEBSERVICES
-    retrofitVersion             = '2.9.0'
-    okHttpVersion               = '3.11.0'
-    retrofitConverterGson       = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
-    retrofitAdapterRxJava       = "com.squareup.retrofit2:adapter-rxjava3:$retrofitVersion"
-
-    // DEBUG
-    timberVersion               = '4.7.1'
-    stethoVersion               = '1.5.1'
-    chuckVersion                = '1.1.0'
-    timber                      = "com.jakewharton.timber:timber:$timberVersion"
-    stetho                      = "com.facebook.stetho:stetho:$stethoVersion"
-    stethoOkHttp                = "com.facebook.stetho:stetho-okhttp3:$stethoVersion"
-    chuckDebug                  = "com.readystatesoftware.chuck:library:$chuckVersion"
-    chuckRelease                = "com.readystatesoftware.chuck:library-no-op:$chuckVersion"
 
     // TEST
     junitVersion                = '4.12'
