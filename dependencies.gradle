@@ -1,0 +1,129 @@
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+}
+
+ext {
+    // APP VERSION
+    androidVersionCode          = 1
+    androidVersionName          = '1.0'
+
+    // ANDROID VERSION
+    androidCompileSdkVersion    = 29
+    androidMinSdkVersion        = 19
+    androidTargetSdkVersion     = androidCompileSdkVersion
+
+    // DEFAULT INFO
+    packageAndroidJUnitRunner   = "androidx.test.runner.AndroidJUnitRunner"
+    defaultFlavorDimensions     = "default"
+
+
+    // ANDROID LIB
+    androidXCoreVersion         = '1.3.0'
+    androidXVersion             = '1.1.0-alpha04'
+    androidXPreferenceVersion   = '1.1.1'
+    androidXRecyclerviewVersion = '1.1.0'
+    androidXSwipeRefreshVersion = '1.0.0'
+    materialVersion             = '1.1.0'
+    constraintLayoutVersion     = '1.1.3'
+    multidexVersion             = '2.0.1'
+    androidXCore                = "androidx.core:core:$androidXCoreVersion"
+    androidXAppCompat           = "androidx.appcompat:appcompat:$androidXVersion"
+    androidXPreference          = "androidx.preference:preference-ktx:$androidXPreferenceVersion"
+    androidXRecyclerView        = "androidx.recyclerview:recyclerview:$androidXRecyclerviewVersion"
+    androidXSwipeRefresh        = "androidx.swiperefreshlayout:swiperefreshlayout:$androidXSwipeRefreshVersion"
+    materialDesign              = "com.google.android.material:material:$materialVersion"
+    constraintLayout            = "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    multidex                    = "androidx.multidex:multidex:$multidexVersion"
+
+    // COMPONENTS
+    roomVersion                 = '2.2.5'
+    room                        = "androidx.room:room-runtime:$roomVersion"
+    roomCompiler                = "androidx.room:room-compiler:$roomVersion"
+
+
+    // WEBSERVICES
+    retrofitVersion             = '2.9.0'
+    okHttpVersion               = '3.11.0'
+    retrofitConverterGson       = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    retrofitAdapterRxJava       = "com.squareup.retrofit2:adapter-rxjava3:$retrofitVersion"
+
+    // DEBUG
+    timberVersion               = '4.7.1'
+    stethoVersion               = '1.5.1'
+    chuckVersion                = '1.1.0'
+    timber                      = "com.jakewharton.timber:timber:$timberVersion"
+    stetho                      = "com.facebook.stetho:stetho:$stethoVersion"
+    stethoOkHttp                = "com.facebook.stetho:stetho-okhttp3:$stethoVersion"
+    chuckDebug                  = "com.readystatesoftware.chuck:library:$chuckVersion"
+    chuckRelease                = "com.readystatesoftware.chuck:library-no-op:$chuckVersion"
+
+    // TEST
+    junitVersion                = '4.12'
+    mockitoVersion              = '3.3.3'
+    mockitoKotlinVersion        = '2.2.0'
+    junit                       = "junit:junit:$junitVersion"
+    mockitoInline               = "org.mockito:mockito-inline:$mockitoVersion"
+    mockitoKotlin               = "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion"
+
+
+    // ANDROID TEST
+    androidXTestVersion         = '1.1.1'
+    androidXTestJunitVersion    = '1.1.1'
+    espressoVersion             = '3.1.0'
+    multidexInstVersion         = '2.0.0'
+    testinCoreVersion           = '2.1.0'
+
+    testCore                  = "androidx.arch.core:core-testing:$testinCoreVersion"
+
+    androidXTestJunit           = "androidx.test.ext:junit:$androidXTestJunitVersion"
+    androidXTestRules           = "androidx.test:rules:$androidXTestVersion"
+    espressoCore                = "androidx.test.espresso:espresso-core:$espressoVersion"
+    espressoIntents             = "androidx.test.espresso:espresso-intents:$espressoVersion"
+    espressoContrib             = "androidx.test.espresso:espresso-contrib:$espressoVersion"
+    multidexInstrumentation     = "androidx.multidex:multidex-instrumentation:$multidexInstVersion"
+    roomTesting                 = "androidx.room:room-testing:$roomVersion"
+
+
+
+    // PROGUARD
+    proguardFolder              = '../proguard/'
+    modelRules                  = proguardFolder + 'model-rules.pro'
+    supportRules                = proguardFolder + 'support-rules.pro'
+    apacheRules                 = proguardFolder + 'apache-rules.pro'
+    gsonRules                   = proguardFolder + 'gson-rules.pro'
+
+    gsonVersion                 = '2.8.1'
+    gson                        = "com.google.code.gson:gson:$gsonVersion"
+
+
+    // ROOM
+    roomVersion                 = '2.2.5'
+    roomRuntime                 = "androidx.room:room-runtime:$roomVersion"
+    roomCompiler                = "androidx.room:room-compiler:$roomVersion"
+    roomRX                      = "androidx.room:room-rxjava2:$roomVersion" // RxJava support for Roomext
+
+    archLifecycleVersion        = '2.2.0'
+    lifecycle                   = "androidx.lifecycle:lifecycle-common-java8:$archLifecycleVersion"
+
+    locationVersion             = '17.0.0'
+    location                    = "com.google.android.gms:play-services-location:$locationVersion"
+
+
+    // DEPENDENCY CHECK STRATEGY
+    dependencyUpdatesStrategy = {
+        componentSelection { rules ->
+            rules.all { ComponentSelection selection ->
+                boolean rejected = ['alpha', 'beta', 'rc', 'cr', 'm'].any { qualifier ->
+                    selection.candidate.version ==~ /(?i).*[.-]${qualifier}[.\d-]*/
+                }
+                if (rejected) {
+                    selection.reject('Release candidate')
+                }
+            }
+        }
+    }
+}

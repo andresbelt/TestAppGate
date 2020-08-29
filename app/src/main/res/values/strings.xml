@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">AppGate</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="validar">Validar</string>
+    <string name="Registrar">registrar</string>
+    <string name="exitoso">Exitoso</string>
+    <string name="denegado">Denegado</string>
+    <string name="no_register">No register</string>
+    <string name="intentos">#Intentos</string>
+    <string name="usuario">Usuario: %1$s</string>
+    <string name="permission_denied_explanation">Permiso GPS es necesario.</string>
+    <string name="settings">Configuración</string>
+    <string name="location_error">Location no se encuentra</string>
+    <string name="usuario_error">No se encuentra usuario</string>
+
+    <string name="empty_error">Los datos no pueden estar vacios</string>
+
+    <string name="location_lost">Permisos Location perdidos</string>
+    <string name="permission_rationale">Permisos de ubicacion necesario</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="registrado">Registrado</string>
+    <string name="error_create_user">La Contraseña debe ser mínimo 8 caracteres al menos una
+        mayúscula, minúscula, número y caracteres especiales.</string>
+
+
+</resources>

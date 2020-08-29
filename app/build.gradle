@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.github.ben-manes.versions'
+
+android {
+    compileSdkVersion androidCompileSdkVersion
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.test.appgate"
+        targetSdkVersion androidTargetSdkVersion
+        minSdkVersion androidMinSdkVersion
+        versionCode androidVersionCode
+        versionName androidVersionName
+        testInstrumentationRunner packageAndroidJUnitRunner
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+            applicationIdSuffix '.debug'
+            versionNameSuffix '-DEBUG'
+        }
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    implementation androidXAppCompat
+    implementation androidXPreference
+    implementation materialDesign
+    implementation constraintLayout
+    implementation gson
+
+    implementation roomRuntime
+    implementation roomRX
+    annotationProcessor roomCompiler
+
+    implementation lifecycle
+
+    implementation location
+    // TEST
+    testImplementation junit
+    testImplementation mockitoInline
+    testImplementation mockitoKotlin
+
+    // ANDROID TEST
+    androidTestImplementation multidexInstrumentation
+    androidTestImplementation androidXTestJunit
+
+    androidTestImplementation espressoIntents
+    androidTestImplementation espressoContrib
+    androidTestImplementation roomTesting
+    androidTestImplementation (espressoCore, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    androidTestImplementation testCore
+
+    // DEPENDENCY CHECK STRATEGY
+    dependencyUpdates.resolutionStrategy = dependencyUpdatesStrategy
+}
