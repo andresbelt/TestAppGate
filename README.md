@@ -5,6 +5,7 @@ Application Android with MVVM, Architecture repository, Independency Injection m
 ## Architecture
 
 ![MVVM3](https://github.com/andresbelt/MuyTest/blob/master/diagram.png)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fandresbelt%2FTestAppGate.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fandresbelt%2FTestAppGate?ref=badge_shield)
 
 
 ## Installation
@@ -28,6 +29,9 @@ git clone https://github.com/andresbelt/TestAppGate.git
 ## License
 
 This project is licensed under the MIT License 
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fandresbelt%2FTestAppGate.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fandresbelt%2FTestAppGate?ref=badge_large)
 
 ## Contributing
 
